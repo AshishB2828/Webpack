@@ -12,6 +12,20 @@ module.exports = {
                     "sass-loader" //1) scss => css
                 ],
         },
+        {
+            test: /\.html$/i,
+            loader: "html-loader",
+        },
+        {
+            test: /\.(svg|png|jpg|gif)$/i,
+            use: {
+                    loader: "file-loader",
+                    options: {
+                        name: "[name].[ext]",
+                        outputPath:"imgs"
+                    }
+                },
+        },
         ],
     },
     plugins: [new HtmlWebpackPlugin({
